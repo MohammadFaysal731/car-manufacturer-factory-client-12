@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Part from '../Part/Part';
 
+
 const Parts = () => {
     const [parts, setParts] = useState([]);
 
