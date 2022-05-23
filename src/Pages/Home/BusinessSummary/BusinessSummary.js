@@ -1,6 +1,6 @@
 import React from 'react';
 import { FcCustomerSupport } from 'react-icons/fc';
-import { HiCurrencyBangladeshi } from 'react-icons/hi';
+import { HiCurrencyDollar } from 'react-icons/hi';
 import { MdOutlineRateReview } from 'react-icons/md';
 import { FaTools } from 'react-icons/fa';
 const BusinessSummary = () => {
@@ -20,7 +20,7 @@ const BusinessSummary = () => {
                     </div>
                     <div class="stats shadow">
                         <div class="stat">
-                            <div class="stat-title text-primary"><HiCurrencyBangladeshi className='text-6xl'></HiCurrencyBangladeshi></div>
+                            <div class="stat-title text-primary"><HiCurrencyDollar className='text-6xl'></HiCurrencyDollar></div>
                             <div class="stat-value">120M+</div>
                             <div class="stat-desc text-xl">Annual Revenue</div>
                         </div>
