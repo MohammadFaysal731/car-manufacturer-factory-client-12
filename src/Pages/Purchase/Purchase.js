@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 
 const Purchase = () => {
     const { id } = useParams();
-    const [purchase, setPurchase] = useState({});
+    const [purchase, setPurchase] = useState([]);
     const { images, name, description, minimumQuantity, availableQuantity, price } = purchase;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchase/${id}`)
+        fetch(`http://localhost:5000/part/${id}`)
             .then(res => res.json())
             .then(data => setPurchase(data))
     }, [id])

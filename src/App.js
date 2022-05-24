@@ -9,6 +9,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import Header from './ShearedPages/Header/Header';
 import NotFound from './ShearedPages/NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
+import RequireAuth from './ShearedPages/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -17,7 +18,11 @@ function App() {
       <Header>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/purchase/:id' element={<Purchase></Purchase>}></Route>
+          <Route path='/part/:id' element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }></Route>
           <Route path='/blogs' element={<Blogs></Blogs>}></Route>
           <Route path='/protfolio' element={<Portfolio></Portfolio>}></Route>
           <Route path='/registration' element={<Registration></Registration>}></Route>

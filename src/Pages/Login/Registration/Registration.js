@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FiLogIn } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
@@ -10,6 +10,8 @@ import SocialLogin from '../../../ShearedPages/SocialLogin/SocialLogin';
 const Registration = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const [
         createUserWithEmailAndPassword,
         emailUser,
@@ -19,13 +21,15 @@ const Registration = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     let signInError;
-
+    useEffect(() => {
+        if (emailUser) {
+            navigate(from, { replace: true });
+        }
+    }, [emailUser, navigate, location, from])
     if (emailLoading || updating) {
         return <Loading></Loading>
     }
-    if (emailUser) {
-        navigate('/blogs')
-    }
+
     if (emailError || updateError) {
         signInError = <p className=' text-red-500'><small>{emailError?.message}</small></p>
     }
