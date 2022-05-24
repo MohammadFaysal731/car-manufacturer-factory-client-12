@@ -8,7 +8,7 @@ import Portfolio from './Pages/Portfolio/Portfolio';
 import Purchase from './Pages/Purchase/Purchase';
 import Header from './ShearedPages/Header/Header';
 import NotFound from './ShearedPages/NotFound/NotFound';
-
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </Header>
-
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

@@ -25,7 +25,6 @@ const Login = () => {
         signInError = <p className=' text-red-500'><small>{emailError?.message}</small></p>
     }
     const onSubmit = data => {
-        console.log(data)
         const email = data.email;
         const password = data.password;
         signInWithEmailAndPassword(email, password);
