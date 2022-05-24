@@ -2,8 +2,10 @@ import React from 'react';
 
 const Reviews = () => {
     return (
-        <div>
-            <h1>Reviews</h1>
+        <div className=''>
+            <h1 className='text-4xl text-center text-primary font-bold' ><u>Reviews</u></h1>
+
+
         </div>
     );
 };

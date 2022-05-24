@@ -10,6 +10,12 @@ import Header from './ShearedPages/Header/Header';
 import NotFound from './ShearedPages/NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
 import RequireAuth from './ShearedPages/RequireAuth/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
+import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview/AddReview';
+import Reviews from './Pages/Home/Reviews/Reviews';
+
 
 
 function App() {
@@ -24,8 +30,15 @@ function App() {
             </RequireAuth>
           }></Route>
           <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+          <Route path='/reviews' element={<Reviews></Reviews>}></Route>
           <Route path='/protfolio' element={<Portfolio></Portfolio>}></Route>
           <Route path='/registration' element={<Registration></Registration>}></Route>
+          <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+            <Route index element={<MyProfile></MyProfile>}></Route>
+            <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+            <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
+            <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          </Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>

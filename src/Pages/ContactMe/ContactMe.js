@@ -21,9 +21,7 @@ const ContactMe = () => {
                         <textarea class="textarea textarea-accent" placeholder="Your Message"></textarea>
                         <input className='btn btn-outline btn-primary w-full max-w-xs' type="submit" value="submit" />
                     </div>
-
                 </div>
-
 
             </div>
         </div>
