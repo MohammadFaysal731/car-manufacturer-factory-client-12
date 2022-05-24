@@ -10,7 +10,7 @@ const Purchase = () => {
         fetch(`http://localhost:5000/purchase/${id}`)
             .then(res => res.json())
             .then(data => setPurchase(data))
-    }, [])
+    }, [id])
 
     return (
         <div className="flex justify-center items-center  mx-8">
@@ -25,7 +25,8 @@ const Purchase = () => {
                         <p>Price:${price}</p>
                         <p>Minimum Order Quantity :{minimumQuantity} Pcs</p>
                         <p>Available Quantity :{availableQuantity} Pcs</p>
-
+                        <input type="text" placeholder="Minimum Quantity" class="input input-bordered  w-full max-w-xs" />
+                        <button class="btn btn-outline btn-primary w-full max-w-xs">Add Products</button>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-2xl">
@@ -42,7 +43,7 @@ const Purchase = () => {
                         <input type="text" placeholder="Email" class="input input-bordered  w-full max-w-xs" />
                         <input type="text" placeholder="Address" class="input input-bordered  w-full max-w-xs" />
                         <input type="text" placeholder="Phone" class="input input-bordered  w-full max-w-xs" />
-                        <button class="btn btn-outline btn-primary w-full max-w-xs">Button</button>
+                        <button class="btn btn-outline btn-primary w-full max-w-xs">purchase</button>
                     </div>
                 </div>
 

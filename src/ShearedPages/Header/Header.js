@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const Header = ({ children }) => {
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/purchase/:id'>Purchase</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
-        <li><Link to='/protfolio'>PortFolio</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/'>HOME</Link></li>
+        <li><Link to='/blogs'>BLOGS</Link></li>
+        <li><Link to='/protfolio'>PORTFOLIO</Link></li>
+        <li><Link to='/login'>LOGIN</Link></li>
     </>
     return (
         <div className="drawer">
