@@ -2,17 +2,30 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-const Login = () => {
+
+const Registration = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-    };
-
+    }
     return (
         <div className='flex justify-center items-center mt-10'>
             <div class="form-control w-full max-w-xs shadow-xl  rounded-xl m-5 p-5">
-                <h1 className='text-xl text-primary text-center m-5'>Login</h1>
+                <h1 className='text-xl text-primary text-center m-5'>Registration</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        type="text"
+                        placeholder="Enter Your Name"
+                        class="input input-bordered w-full max-w-xs"
+                        {...register("name", {
+                            required: {
+                                value: true,
+                                message: 'Name is Required'
+                            }
+                        })} />
+                    <label class="label">
+                        {errors.name?.type === 'required' && <span className='text-red-500'><small>{errors.name.message}</small></span>}
+                    </label>
                     <input
                         type="email"
                         placeholder="Enter Your Email"
@@ -44,14 +57,12 @@ const Login = () => {
                         {errors.password?.type === 'required' && <span className='text-red-500'><small>{errors.password.message}</small></span>}
                         {errors.password?.type === 'minLength' && <span className='text-red-500'><small>{errors.password.message}</small></span>}
                     </label>
-                    <button class="btn btn-outline btn-primary w-full max-w-xs">Login<FiLogIn className='text-lg m-2'></FiLogIn></button>
-                    <small>Forgot Your Password ? </small>
-                    <p><small>New To Car Parts Please? <Link to='/registration' className='text-primary'>Registration</Link></small></p>
-
+                    <button class="btn btn-outline btn-primary w-full max-w-xs">Registration<FiLogIn className='text-lg m-2'></FiLogIn></button>
+                    <p><small>Already have an account Please? <Link to='/login' className='text-primary'>Login</Link></small></p>
                 </form>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Registration;
