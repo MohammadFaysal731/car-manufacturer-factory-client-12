@@ -39,20 +39,12 @@ const Blogs = () => {
                         <p>&bull;When we update the state value directly.</p>
                     </div>
                     <div class="card  bg-base-100 shadow-xl p-7">
-                        <h4> How will you improve the performance of a React Application ?</h4>
+                        <h4> What is a unit test? Why should write unit tests ?</h4>
                         <br />
-                        <p>&bull;I can improve react application using Context Api and stop props drilling.</p>
-                        <p>&bull;When we know the same data load in our application many components we create custom hooks and use it every ware.</p>
-                        <p>&bull;Using import and export method.</p>
-                        <p>&bull;When we see the components ar similar look different in data we can create one special components and pass the data it will be improve our performance.</p>
-                    </div>
-                    <div class="card  bg-base-100 shadow-xl p-7">
-                        <h4> How will you improve the performance of a React Application ?</h4>
-                        <br />
-                        <p>&bull;I can improve react application using Context Api and stop props drilling.</p>
-                        <p>&bull;When we know the same data load in our application many components we create custom hooks and use it every ware.</p>
-                        <p>&bull;Using import and export method.</p>
-                        <p>&bull;When we see the components ar similar look different in data we can create one special components and pass the data it will be improve our performance.</p>
+                        <p>Unit test ar madomay amader components gulo k pithok bave porikha kora hoy.</p>
+                        <p>Unit test sadaro notu kora hoy karon amader application ar sob kisu kaj thek moto kaj kor say ki na.</p>
+                        <p>Unit test ar madomay amra bugs gulo taratari somadan kor te pari.</p>
+                        <p>A ta amrder sahojo koray amader kono kisu poriporiborton korte</p>
                     </div>
                 </div>
             </div>

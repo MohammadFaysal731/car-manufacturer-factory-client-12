@@ -1,5 +1,5 @@
 import React from 'react';
-import discount from '../../../images/components-automobile.jpg'
+import discount from '../../../images/discoutn.png'
 const Subscription = () => {
     return (
         <div className="" >
