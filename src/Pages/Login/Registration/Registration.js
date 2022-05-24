@@ -40,7 +40,7 @@ const Registration = () => {
         const email = data.email;
         const password = data.password;
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile(name);
+        await updateProfile({ displayName: name });
         toast('Update User Success')
     }
     return (

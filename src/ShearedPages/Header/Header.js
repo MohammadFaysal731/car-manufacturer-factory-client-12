@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 const Header = ({ children }) => {
     const [user] = useAuthState(auth);
+    console.log(user)
     const handleSignOut = () => {
         signOut(auth)
     }
@@ -13,7 +14,15 @@ const Header = ({ children }) => {
         <li><Link to='/blogs'>BLOGS</Link></li>
         <li><Link to='/protfolio'>PORTFOLIO</Link></li>
         <li>
-            {user ? <button onClick={handleSignOut}>signOUt</button> : <Link to='/login'>LOGIN</Link>}
+            {user
+                ?
+                <>
+                    <button onClick={handleSignOut}>SIGN OUT</button>
+                    <div className="">
+                        <img className='rounded-full w-8' src={user.photoURL} alt={user.displayName} />
+                    </div>
+                </>
+                : <Link to='/login'>LOGIN</Link>}
         </li>
     </>
     return (

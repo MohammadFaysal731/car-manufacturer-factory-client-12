@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Purchase = () => {
     const { id } = useParams();
     const [purchase, setPurchase] = useState([]);
+    const [user] = useAuthState(auth);
+    console.log(user)
     const { images, name, description, minimumQuantity, availableQuantity, price } = purchase;
 
     useEffect(() => {
@@ -31,18 +35,22 @@ const Purchase = () => {
                 </div>
                 <div className="card w-96 bg-base-100 shadow-2xl">
                     <div className=" flex justify-between items-center m-2">
-                        <h1>name</h1>
+                        {
+                            user ? <>
+                                {user.displayName}
+                            </> : ''
+                        }
                         <label className="btn btn-ghost btn-circle avatar ">
                             <div className="w-10 rounded-full">
-                                <img src="https://api.lorem.space/image/face?hash=33791" alt='' />
+                                <img src={user.photoURL} alt={user.displayName} />
                             </div>
                         </label>
                     </div>
                     <div className="card-body items-center text-center mt-20">
-                        <input type="text" placeholder="Name" className="input input-bordered  w-full max-w-xs" />
-                        <input type="text" placeholder="Email" className="input input-bordered  w-full max-w-xs" />
+                        <input type="text" value={user.displayName} disabled className="input input-bordered  w-full max-w-xs" />
+                        <input type="email" value={user.email} disabled className="input input-bordered  w-full max-w-xs" />
                         <input type="text" placeholder="Address" className="input input-bordered  w-full max-w-xs" />
-                        <input type="text" placeholder="Phone" className="input input-bordered  w-full max-w-xs" />
+                        <input type="number" placeholder="Phone" className="input input-bordered  w-full max-w-xs" />
                         <button className="btn btn-outline btn-primary w-full max-w-xs">purchase</button>
                     </div>
                 </div>
