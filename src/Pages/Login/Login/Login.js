@@ -1,30 +1,50 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
+import { FiLogIn } from 'react-icons/fi';
 const Login = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        console.log(data)
+    };
 
     return (
-        <div>
-            <div class="form-control w-full max-w-xs">
-                <input type="text" placeholder="Email" class="input input-bordered w-full max-w-xs" />
-                <label class="label">
-                    <span class="label-text-alt">Alt label</span>
-                </label>
-                <input type="text" placeholder="Email" class="input input-bordered w-full max-w-xs" />
-                <label class="label">
-                    <span class="label-text-alt">Alt label</span>
-                </label>
-                <button class="btn btn-outline btn-primary">Login</button>
-
+        <div className='flex justify-center items-center mt-10'>
+            <div class="form-control w-full max-w-xs shadow-xl  rounded-xl m-5 p-5">
+                <h1 className='text-xl text-primary text-center m-5'>Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("email", { required: true })} />
-                    {errors.firstName?.type === 'required' && "First name is required"}
-
-                    <input {...register("lastName", { required: true })} />
-                    {errors.lastName && "Last name is required"}
-                    <input type="submit" />
+                    <input
+                        type="email"
+                        placeholder="Enter Your Email"
+                        class="input input-bordered w-full max-w-xs"
+                        {...register("email", {
+                            required: {
+                                value: true,
+                                message: 'Email is Required'
+                            }
+                        })} />
+                    <label class="label">
+                        {errors.email?.type === 'required' && <span className='text-red-500'><small>{errors.email.message}</small></span>}
+                    </label>
+                    <input
+                        type="password"
+                        placeholder="Enter Your Password"
+                        class="input input-bordered w-full max-w-xs"
+                        {...register("password", {
+                            required: {
+                                value: true,
+                                message: 'Password is Required'
+                            },
+                            minLength: {
+                                value: 6,
+                                message: 'Password should be minimum character'
+                            }
+                        })} />
+                    <label class="label">
+                        {errors.password?.type === 'required' && <span className='text-red-500'><small>{errors.password.message}</small></span>}
+                        {errors.password?.type === 'minLength' && <span className='text-red-500'><small>{errors.password.message}</small></span>}
+                    </label>
+                    <button class="btn btn-outline btn-primary w-full max-w-xs">Login<FiLogIn className='text-lg m-2'></FiLogIn></button>
+                    <small>Forgot Your Password ? </small>
                 </form>
             </div>
         </div>
