@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
+import SocialLogin from '../../../ShearedPages/SocialLogin/SocialLogin';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -70,7 +71,7 @@ const Login = () => {
                     <button className="btn btn-outline btn-primary w-full max-w-xs">Login<FiLogIn className='text-lg m-2'></FiLogIn></button>
                     <small>Forgot Your Password ? </small>
                     <p><small>New To Car Parts Please? <Link to='/registration' className='text-primary'>Registration</Link></small></p>
-
+                    <SocialLogin></SocialLogin>
                 </form>
             </div>
         </div>

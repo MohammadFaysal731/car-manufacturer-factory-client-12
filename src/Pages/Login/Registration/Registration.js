@@ -2,9 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FiLogIn } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
+import { toast } from 'react-toastify';
+import SocialLogin from '../../../ShearedPages/SocialLogin/SocialLogin';
 const Registration = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -18,13 +20,13 @@ const Registration = () => {
 
     let signInError;
 
-    if (emailLoading) {
+    if (emailLoading || updating) {
         return <Loading></Loading>
     }
     if (emailUser) {
         navigate('/blogs')
     }
-    if (emailError) {
+    if (emailError || updateError) {
         signInError = <p className=' text-red-500'><small>{emailError?.message}</small></p>
     }
 
@@ -35,7 +37,7 @@ const Registration = () => {
         const password = data.password;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile(name);
-        alert('update user')
+        toast('Update User Success')
     }
     return (
         <div className='flex justify-center items-center mt-10'>
@@ -90,6 +92,7 @@ const Registration = () => {
                     <button className="btn btn-outline btn-primary w-full max-w-xs">Registration<FiLogIn className='text-lg m-2'></FiLogIn></button>
                     <p><small>Already have an account Please? <Link to='/login' className='text-primary'>Login</Link></small></p>
                 </form>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
 
