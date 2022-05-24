@@ -31,12 +31,12 @@ const Blogs = () => {
                         <p>&bull;It work like ching hooks.</p>
                     </div>
                     <div class="card  bg-base-100 shadow-xl p-7">
-                        <h4> How will you improve the performance of a React Application ?</h4>
+                        <h4>Why you do not set the state directly in React ?</h4>
                         <br />
-                        <p>&bull;I can improve react application using Context Api and stop props drilling.</p>
-                        <p>&bull;When we know the same data load in our application many components we create custom hooks and use it every ware.</p>
+                        <p>&bull;Because state  by default give us a object an a function.</p>
+                        <p>&bull;function can set the state value.</p>
                         <p>&bull;Using import and export method.</p>
-                        <p>&bull;When we see the components ar similar look different in data we can create one special components and pass the data it will be improve our performance.</p>
+                        <p>&bull;When we update the state value directly.</p>
                     </div>
                     <div class="card  bg-base-100 shadow-xl p-7">
                         <h4> How will you improve the performance of a React Application ?</h4>
