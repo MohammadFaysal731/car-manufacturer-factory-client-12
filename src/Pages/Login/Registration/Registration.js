@@ -1,12 +1,36 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FiLogIn } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import Loading from '../../../ShearedPages/Loading/Loading';
 const Registration = () => {
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const [
+        createUserWithEmailAndPassword,
+        emailUser,
+        emailLoading,
+        emailError,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    if (emailLoading) {
+        return <Loading></Loading>
+    }
+    if (emailUser) {
+        navigate('/blogs')
+    }
+
+
+    const onSubmit = async (data) => {
         console.log(data)
+        const name = data.name;
+        const email = data.email;
+        const password = data.password;
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile(name);
+        alert('update user')
     }
     return (
         <div className='flex justify-center items-center mt-10'>
@@ -62,6 +86,7 @@ const Registration = () => {
                 </form>
             </div>
         </div>
+
     );
 };
 

@@ -2,10 +2,21 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+// import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+// import auth from '../../../firebase.init';
 const Login = () => {
+    // const [
+    //     signInWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error,
+    // ] = useSignInWithEmailAndPassword(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
+        // const email = data.email;
+        // const password = data.password;
+        // signInWithEmailAndPassword(email, password);
     };
 
     return (
