@@ -25,25 +25,25 @@ const Purchase = () => {
                         <p>Price:${price}</p>
                         <p>Minimum Order Quantity :{minimumQuantity} Pcs</p>
                         <p>Available Quantity :{availableQuantity} Pcs</p>
-                        <input type="text" placeholder="Minimum Quantity" class="input input-bordered  w-full max-w-xs" />
-                        <button class="btn btn-outline btn-primary w-full max-w-xs">Add Products</button>
+                        <input type="text" placeholder="Minimum Quantity" className="input input-bordered  w-full max-w-xs" />
+                        <button className="btn btn-outline btn-primary w-full max-w-xs">Add Products</button>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-2xl">
                     <div className=" flex justify-between items-center m-2">
                         <h1>name</h1>
-                        <label class="btn btn-ghost btn-circle avatar ">
-                            <div class="w-10 rounded-full">
+                        <label className="btn btn-ghost btn-circle avatar ">
+                            <div className="w-10 rounded-full">
                                 <img src="https://api.lorem.space/image/face?hash=33791" alt='' />
                             </div>
                         </label>
                     </div>
                     <div className="card-body items-center text-center mt-20">
-                        <input type="text" placeholder="Name" class="input input-bordered  w-full max-w-xs" />
-                        <input type="text" placeholder="Email" class="input input-bordered  w-full max-w-xs" />
-                        <input type="text" placeholder="Address" class="input input-bordered  w-full max-w-xs" />
-                        <input type="text" placeholder="Phone" class="input input-bordered  w-full max-w-xs" />
-                        <button class="btn btn-outline btn-primary w-full max-w-xs">purchase</button>
+                        <input type="text" placeholder="Name" className="input input-bordered  w-full max-w-xs" />
+                        <input type="text" placeholder="Email" className="input input-bordered  w-full max-w-xs" />
+                        <input type="text" placeholder="Address" className="input input-bordered  w-full max-w-xs" />
+                        <input type="text" placeholder="Phone" className="input input-bordered  w-full max-w-xs" />
+                        <button className="btn btn-outline btn-primary w-full max-w-xs">purchase</button>
                     </div>
                 </div>
 
