@@ -18,8 +18,33 @@ const Purchase = () => {
 
     return (
         <div className="flex justify-center items-center  mx-8">
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5'>
+            <div className=''>
                 <div className="card w-96 bg-base-100 shadow-2xl">
+                    <div className="flex justify-end items-end">
+                        {/* <!-- The button to open modal --> */}
+                        <label for="my-modal-3" class="btn-outline btn-primary btn modal-button">User Information</label>
+
+                        {/* <!-- Put this part before </body> tag --> */}
+                        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box relative">
+                                <label for="my-modal-3" class="btn btn-sm btn-circle btn-primary absolute right-2 top-2">✕</label>
+
+                                <div className=" flex justify-between items-center m-2">
+                                    {
+                                        user ? <>
+                                            {user.displayName}
+                                        </> : ''
+                                    }
+                                    <label className="btn btn-ghost btn-circle avatar ">
+                                        <div className="w-10 rounded-full">
+                                            <img src={user.photoURL} alt={user.displayName} />
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <figure className="px-10 pt-10">
                         <img src={images} alt="Shoes" className="rounded-xl" />
                     </figure>
@@ -33,31 +58,8 @@ const Purchase = () => {
                         <button className="btn btn-outline btn-primary w-full max-w-xs">Add Products</button>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-2xl">
-                    <div className=" flex justify-between items-center m-2">
-                        {
-                            user ? <>
-                                {user.displayName}
-                            </> : ''
-                        }
-                        <label className="btn btn-ghost btn-circle avatar ">
-                            <div className="w-10 rounded-full">
-                                <img src={user.photoURL} alt={user.displayName} />
-                            </div>
-                        </label>
-                    </div>
-                    <div className="card-body items-center text-center mt-20">
-                        <input type="text" value={user.displayName} disabled className="input input-bordered  w-full max-w-xs" />
-                        <input type="email" value={user.email} disabled className="input input-bordered  w-full max-w-xs" />
-                        <input type="text" placeholder="Address" className="input input-bordered  w-full max-w-xs" />
-                        <input type="number" placeholder="Phone" className="input input-bordered  w-full max-w-xs" />
-                        <button className="btn btn-outline btn-primary w-full max-w-xs">purchase</button>
-                    </div>
-                </div>
-
-
             </div>
-        </div>
+        </div >
     );
 };
 
