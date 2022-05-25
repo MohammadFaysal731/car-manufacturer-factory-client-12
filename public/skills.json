@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "HTML",
+        "image": "https://cdn0.iconfinder.com/data/icons/IS_html5-icons/512/logo.png"
+    },
+    {
+        "id": 2,
+        "name": "CSS",
+        "image": "https://image.pngaaa.com/311/3920311-middle.png"
+    },
+    {
+        "id": 3,
+        "name": "BootStrap",
+        "image": "https://getbootstrap.com/docs/5.2/assets/img/bootstrap-icons.png"
+    },
+    {
+        "id": 4,
+        "name": "TailwindCss",
+        "image": "https://res.cloudinary.com/arcjet-media/image/upload/v1608734952/z8hzeszc9eb3sp3vp3qc.jpg"
+    },
+    {
+        "id": 5,
+        "name": "React BootStrap",
+        "image": "https://user-images.githubusercontent.com/42708686/121468850-160d7900-c9d9-11eb-9cc2-b3db7bb52df3.png"
+    },
+    {
+        "id": 6,
+        "name": "DasiyUI",
+        "image": "https://avatars.githubusercontent.com/u/76870092?v=4&s=160"
+    },
+    {
+        "id": 7,
+        "name": "JavaScript",
+        "image": "https://pbs.twimg.com/profile_images/1512774369558372361/IegUPpg-_400x400.jpg"
+    },
+    {
+        "id": 8,
+        "name": "React",
+        "image": "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_1e0d62f445e6448af1e125f5702c8227/reactjs-development-services.png"
+    },
+    {
+        "id": 9,
+        "name": "React Router",
+        "image": "https://blog.karenying.com/static/b17f2b049068979741a79588250ad8cb/nav-bar-with-dot.png"
+    },
+    {
+        "id": 10,
+        "name": "NodeJs",
+        "image": "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_f0b606abb6d19089febc9faeeba5bc05/nodejs-development-services.png"
+    },
+    {
+        "id": 11,
+        "name": "Mongodb",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSal6Nqc7P9eURmK_koJmiyoMa1HLWdFfDLMg&usqp=CAU"
+    },
+    {
+        "id": 12,
+        "name": "Firebase",
+        "image": "https://www.gstatic.com/devrel-devsite/prod/v2cfe3be7b1735e78718b242e557d4a47f9b52b339aa402465e5ba3f2d269c3cb/firebase/images/touchicon-180.png"
+    }
+]

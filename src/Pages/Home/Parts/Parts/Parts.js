@@ -16,7 +16,7 @@ const Parts = () => {
         <div className=''>
             <h1 className='text-4xl text-center text-primary font-bold'><u>OUR PARTS</u></h1>
             <div className="flex justify-center items-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {
                         parts.map(part => <Part
                             part={part}
