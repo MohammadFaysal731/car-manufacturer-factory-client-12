@@ -3,10 +3,11 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-
+import userImg from '../../images/user.jpg'
 const Header = ({ children }) => {
+
     const [user] = useAuthState(auth);
-    console.log(user)
+
     const handleSignOut = () => {
         signOut(auth)
     }
@@ -20,7 +21,7 @@ const Header = ({ children }) => {
                 ? <li>
                     <button onClick={handleSignOut}>SIGN OUT</button>
                     <div className="">
-                        <img className='rounded-full w-8' src={user.photoURL} alt={user.displayName} />
+                        <img className='rounded-full w-8' src={user.photoURL ? user.photoURL : userImg} alt={user.displayName} />
                     </div>
                 </li>
                 : <li><Link to='/login'>LOGIN</Link></li>
