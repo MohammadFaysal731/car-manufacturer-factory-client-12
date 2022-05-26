@@ -18,8 +18,8 @@ const Part = ({ part }) => {
                 <h2 className="card-title">{name}</h2>
                 <p title={description}>{description.length > 100 ? description.slice(0, 100) + '.....' : description}</p>
                 <p>Price:${price}</p>
-                <p>Minimum Order Quantity :{minimumQuantity} Pcs</p>
-                <p>Available Quantity :{availableQuantity} Pcs</p>
+                <p>Minimum Order Quantity :{minimumQuantity}/Pcs</p>
+                <p>Available Quantity :{availableQuantity}/Pcs</p>
                 <div className="card-actions">
                     <button onClick={() => handleBuyNow(_id)} className="btn btn-primary">Buy Now<FaOpencart className='text-lg m-4'></FaOpencart></button>
                 </div>

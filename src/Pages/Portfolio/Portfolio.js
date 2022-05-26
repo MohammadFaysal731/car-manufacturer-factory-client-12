@@ -14,12 +14,12 @@ const Portfolio = () => {
     }
     return (
         <div>
-            <div class="hero min-h-screen ">
-                <div class="hero-content flex-col lg:flex-row-reverse m-12 px-12">
-                    <img src={myself} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+            <div className="hero min-h-screen ">
+                <div className="hero-content flex-col lg:flex-row-reverse m-12 px-12">
+                    <img src={myself} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div>
-                        <h1 class="text-5xl font-bold">Welcome To My ProtFolio!</h1>
-                        <p class="py-6"> name, email address, educational background, list of technologies or skills you have as a web developer</p>
+                        <h1 className="text-5xl font-bold">Welcome To My ProtFolio!</h1>
+                        <p className="py-6"> name, email address, educational background, list of technologies or skills you have as a web developer</p>
                         <h2 className='text-xl'>Hello,I am <span className='text-primary'>Mohammad Faysal</span></h2>
                         <p><small><span className='text-primary'>www.faysal731@gmail.com</span></small></p>
                         <div className="text-primary ">
@@ -49,30 +49,30 @@ const Portfolio = () => {
                 <h1 className='text-primary text-center text-4xl'>See My Projects</h1>
                 <div className="flex justify-center items-center">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5">
-                        <div class="card w-72 bg-base-100 shadow-xl">
-                            <figure class="px-10 pt-10">
-                                <img src={project1} alt="Shoes" class="rounded-xl" />
+                        <div className="card w-72 bg-base-100 shadow-xl">
+                            <figure className="px-10 pt-10">
+                                <img src={project1} alt="Shoes" className="rounded-xl" />
                             </figure>
-                            <div class="card-body items-center text-center">
-                                <h2 class="card-title">independent Service Provider</h2>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title">independent Service Provider</h2>
                                 <p><small><a href="https://independent-service-prov-f1a49.web.app" target="_blank"><FaHandPointDown className='text-xl text-primary'></FaHandPointDown>https://independent-service-prov-f1a49.web.app</a></small></p>
                             </div>
                         </div>
-                        <div class="card w-72 bg-base-100 shadow-xl">
-                            <figure class="px-10 pt-10">
-                                <img src={project2} alt="Shoes" class="rounded-xl" />
+                        <div className="card w-72 bg-base-100 shadow-xl">
+                            <figure className="px-10 pt-10">
+                                <img src={project2} alt="Shoes" className="rounded-xl" />
                             </figure>
-                            <div class="card-body items-center text-center">
-                                <h2 class="card-title">Laptop Review</h2>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title">Laptop Review</h2>
                                 <p><small><a href="https://hp-probook-laptop-reviews.netlify.app" target="_blank"><FaHandPointDown className='text-xl text-primary'></FaHandPointDown>https://hp-probook-laptop-reviews.netlify.app</a></small></p>
                             </div>
                         </div>
-                        <div class="card w-72 bg-base-100 shadow-xl">
-                            <figure class="px-10 pt-10">
-                                <img src={project3} alt="Shoes" class="rounded-xl" />
+                        <div className="card w-72 bg-base-100 shadow-xl">
+                            <figure className="px-10 pt-10">
+                                <img src={project3} alt="Shoes" className="rounded-xl" />
                             </figure>
-                            <div class="card-body items-center text-center">
-                                <h2 class="card-title">Car Manufacture</h2>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title">Car Manufacture</h2>
                                 <p><small><a href="https://hp-probook-laptop-reviews.netlify.app" target="_blank"><FaHandPointDown className='text-xl text-primary'></FaHandPointDown>https://hp-probook-laptop-reviews.netlify.app</a></small></p>
                             </div>
                         </div>

@@ -24,17 +24,22 @@ const Purchase = () => {
 
 
     const onSubmit = data => {
-
+        const name = data.name;
+        const email = data.email;
         const address = data.address;
         const phone = data.phone;
-        const productName = data.product;
-        const order = data.order;
+        const productName = data.productName;
+        const productQuantity = data.productQuantity;
+
         const orders = {
+            name: name,
+            email: email,
             address: address,
             phone: phone,
             productName: productName,
-            order: order
+            productQuantity: productQuantity
         }
+        console.log(orders)
         fetch(`http://localhost:5000/order`, {
             method: 'POST',
             headers: {
@@ -64,8 +69,8 @@ const Purchase = () => {
                             <h2 className="card-title">{name}</h2>
                             <p title={description}>{description?.length > 100 ? description.slice(0, 100) + '.....' : description}</p>
                             <p>Price:${price}</p>
-                            <p>Minimum Order Quantity :{minimumQuantity} Pcs</p>
-                            <p>Available Quantity :{availableQuantity} Pcs</p>
+                            <p>Minimum Order Quantity :{minimumQuantity}/Pcs</p>
+                            <p>Available Quantity :{availableQuantity}/Pcs</p>
                         </div>
                     </div>
                     <div className="card-body  card w-96 bg-base-100 shadow-2xl">
@@ -110,7 +115,7 @@ const Purchase = () => {
                                 {errors.address?.type === 'required' && <span className='text-red-500'><small>{errors.address.message}</small></span>}
                             </label>
                             <input
-                                type="number"
+                                type="text"
                                 placeholder="Enter Phone Number"
                                 className="input input-bordered w-full max-w-xs"
                                 {...register("phone", {
@@ -126,14 +131,14 @@ const Purchase = () => {
                                 type="text"
                                 placeholder="Enter Product Name"
                                 className="input input-bordered w-full max-w-xs"
-                                {...register("product", {
+                                {...register("productName", {
                                     required: {
                                         value: true,
                                         message: 'Product Name is Required'
                                     }
                                 })} />
                             <label className="label">
-                                {errors.product?.type === 'required' && <span className='text-red-500'><small>{errors.product.message}</small></span>}
+                                {errors.productName?.type === 'required' && <span className='text-red-500'><small>{errors.productName.message}</small></span>}
                             </label>
                             <input
 
@@ -142,7 +147,7 @@ const Purchase = () => {
                                 min={100}
                                 max={10000}
                                 className="input input-bordered w-full max-w-xs"
-                                {...register("order", {
+                                {...register("productQuantity", {
                                     required: {
                                         value: true,
                                         message: 'Minimum Order is 100 pcs'
@@ -150,7 +155,7 @@ const Purchase = () => {
 
                                 })} />
                             <label className="label">
-                                {errors.order?.type === 'required' && <span className='text-red-500'><small>{errors.order.message}</small></span>}
+                                {errors.productQuantity?.type === 'required' && <span className='text-red-500'><small>{errors.productQuantity.message}</small></span>}
 
                             </label>
                             <button className="btn btn-outline btn-primary w-full max-w-xs">Purchase<BiPurchaseTagAlt className='text-lg m-2'></BiPurchaseTagAlt></button>
