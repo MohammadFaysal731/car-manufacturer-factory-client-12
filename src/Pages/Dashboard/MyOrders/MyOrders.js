@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
+import Modal from '../../../ShearedPages/Modal/Modal';
 import OrderRow from '../OrderRow/OrderRow';
 
 
@@ -10,6 +11,8 @@ import OrderRow from '../OrderRow/OrderRow';
 
 const MyOrders = () => {
     const [user, userLoading] = useAuthState(auth);
+
+    const [deleteConfirm, setDeleteConfirm] = useState(null);
 
     const { data: orders, isLoading, refetch } = useQuery(['orders', user?.email], () => fetch(`http://localhost:5000/order?email=${user?.email}`, {}).then(res => res.json()))
 
@@ -39,14 +42,15 @@ const MyOrders = () => {
                                 order={order}
                                 key={order._id}
                                 index={index}
-                                refetch={refetch}
+                                setDeleteConfirm={setDeleteConfirm}
                             ></OrderRow>)
                         }
                     </tbody>
                 </table>
-
             </div>
-
+            {
+                deleteConfirm && <Modal deleteConfirm={deleteConfirm} refetch={refetch} setDeleteConfirm={setDeleteConfirm}></Modal>
+            }
 
         </div>
     );
