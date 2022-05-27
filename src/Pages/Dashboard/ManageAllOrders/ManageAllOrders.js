@@ -41,7 +41,7 @@ const ManageAllOrders = () => {
                     <tbody>
                         {
                             orders?.map((order, index) => <tr
-                                className='text-primary'
+                                className='text-primary hover'
                                 order={order}
                                 key={order._id}
                                 index={index}

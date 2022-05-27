@@ -73,7 +73,7 @@ const Portfolio = () => {
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Car Manufacture</h2>
-                                <p><small><a href="https://hp-probook-laptop-reviews.netlify.app" target="_blank"><FaHandPointDown className='text-xl text-primary'></FaHandPointDown>https://hp-probook-laptop-reviews.netlify.app</a></small></p>
+                                <p><small><a href="https://car-manufacturer-12d7e.firebaseapp.com/" target="_blank"><FaHandPointDown className='text-xl text-primary'></FaHandPointDown>https://car-manufacturer-12d7e.firebaseapp.com</a></small></p>
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@ const OrderRow = ({ order, index, setDeleteConfirm }) => {
 
 
     return (
-        <tr className='uppercase text-primary'>
+        <tr className='uppercase text-primary hover'>
             <td>{index + 1}</td>
             <td>{productName}</td>
             <td>{productQuantity}/Pcs</td>
