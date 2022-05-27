@@ -16,6 +16,10 @@ import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import Footer from './ShearedPages/Footer/Footer';
 import Payment from './Pages/Dashboard/Payment/Payment';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
+import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import ManageAllProducts from './Pages/Dashboard/ManageAllProducts/ManageAllProducts';
 
 
 
@@ -40,6 +44,10 @@ function App() {
             <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
             <Route path='payment' element={<Payment></Payment>}></Route>
             <Route path='addreview' element={<AddReview></AddReview>}></Route>
+            <Route path='manageallorder' element={<ManageAllOrders></ManageAllOrders>}></Route>
+            <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+            <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+            <Route path='manageallproducts' element={<ManageAllProducts></ManageAllProducts>}></Route>
           </Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>

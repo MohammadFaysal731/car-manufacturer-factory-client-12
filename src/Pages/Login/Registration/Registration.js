@@ -27,10 +27,10 @@ const Registration = () => {
 
 
     useEffect(() => {
-        if (users) {
+        if (emailUser) {
             navigate(from, { replace: true });
         }
-    }, [users, navigate, location, from])
+    }, [emailUser, navigate, location, from])
 
     if (emailLoading || updating) {
         return <Loading></Loading>
@@ -45,7 +45,7 @@ const Registration = () => {
         const name = data.name;
         const email = data.email;
         const password = data.password;
-        await createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password, users);
         await updateProfile({ displayName: name });
     }
     return (

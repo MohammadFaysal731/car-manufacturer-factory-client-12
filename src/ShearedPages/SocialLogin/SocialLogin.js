@@ -8,7 +8,7 @@ import Loading from '../Loading/Loading';
 const SocialLogin = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-    const [users] = useUser(googleUser)
+    const [users] = useUser();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -18,10 +18,10 @@ const SocialLogin = () => {
     let googleSignError;
 
     useEffect(() => {
-        if (users) {
+        if (googleUser) {
             navigate(from, { replace: true });
         }
-    }, [users, navigate, location, from])
+    }, [googleUser, navigate, location, from])
 
     if (googleLoading) {
         return <Loading></Loading>
@@ -35,7 +35,7 @@ const SocialLogin = () => {
 
                 <div className="divider">OR</div>
                 {googleSignError}
-                <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-primary w-full max-w-xs"><FcGoogle className='text-lg m-2'></FcGoogle>Continue With Google</button>
+                <button onClick={() => signInWithGoogle(users)} className="btn btn-outline btn-primary w-full max-w-xs"><FcGoogle className='text-lg m-2'></FcGoogle>Continue With Google</button>
             </div>
         </div>
     );

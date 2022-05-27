@@ -25,10 +25,10 @@ const Login = () => {
     let signInError;
 
     useEffect(() => {
-        if (users) {
+        if (emailUser) {
             navigate(from, { replace: true });
         }
-    }, [users, navigate, location, from])
+    }, [emailUser, navigate, location, from])
     if (emailLoading) {
         return <Loading></Loading>
     }
@@ -39,7 +39,7 @@ const Login = () => {
     const onSubmit = data => {
         const email = data.email;
         const password = data.password;
-        signInWithEmailAndPassword(email, password);
+        signInWithEmailAndPassword(email, password, users);
     };
 
     return (

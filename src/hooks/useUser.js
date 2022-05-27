@@ -21,7 +21,7 @@ const useUser = user => {
         }
     }, [user])
 
-    return [users, setUser]
+    return [users]
 
 }
 
