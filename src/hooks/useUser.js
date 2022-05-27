@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 const useUser = user => {
-    const [users, setUser] = useState('');
+    const [users] = useState('');
     useEffect(() => {
         const email = user?.user?.email;
         const currentUser = { email: email }
