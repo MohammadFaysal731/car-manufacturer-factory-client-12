@@ -79,6 +79,7 @@ const Purchase = () => {
                                 type="text"
                                 value={user.displayName}
                                 className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
                                 {...register("name", {
                                     required: {
                                         value: true,
@@ -92,6 +93,7 @@ const Purchase = () => {
                                 type="email"
                                 value={user.email}
                                 className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -105,6 +107,7 @@ const Purchase = () => {
                                 type="text"
                                 placeholder="Enter Address"
                                 className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
                                 {...register("address", {
                                     required: {
                                         value: true,
@@ -118,6 +121,7 @@ const Purchase = () => {
                                 type="text"
                                 placeholder="Enter Phone Number"
                                 className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
                                 {...register("phone", {
                                     required: {
                                         value: true,
@@ -131,6 +135,7 @@ const Purchase = () => {
                                 type="text"
                                 placeholder="Enter Product Name"
                                 className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
                                 {...register("productName", {
                                     required: {
                                         value: true,
@@ -147,6 +152,7 @@ const Purchase = () => {
                                 min={100}
                                 max={10000}
                                 className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
                                 {...register("productQuantity", {
                                     required: {
                                         value: true,

@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
-import Modal from '../../../ShearedPages/Modal/Modal';
+import Modal from '../Modal/Modal';
 import OrderRow from '../OrderRow/OrderRow';
 
 
@@ -23,7 +23,7 @@ const MyOrders = () => {
     return (
         <div>
 
-            <h1 className='text-center text-primary text-2xl m-5'>MyOrders</h1>
+            <h1 className='text-center text-primary text-2xl m-5 uppercase'>My Orders</h1>
 
             <div className="overflow-x-auto">
                 <table className="table w-full">

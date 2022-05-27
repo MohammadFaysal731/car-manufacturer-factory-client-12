@@ -15,6 +15,7 @@ import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import Footer from './ShearedPages/Footer/Footer';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route index element={<MyProfile></MyProfile>}></Route>
             <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
             <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
+            <Route path='payment' element={<Payment></Payment>}></Route>
             <Route path='addreview' element={<AddReview></AddReview>}></Route>
           </Route>
           <Route path='/login' element={<Login></Login>}></Route>

@@ -5,8 +5,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
-import { toast } from 'react-toastify';
 import SocialLogin from '../../../ShearedPages/SocialLogin/SocialLogin';
+
 const Registration = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -21,11 +21,14 @@ const Registration = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     let signInError;
+
+
     useEffect(() => {
         if (emailUser) {
             navigate(from, { replace: true });
         }
     }, [emailUser, navigate, location, from])
+
     if (emailLoading || updating) {
         return <Loading></Loading>
     }
@@ -41,7 +44,6 @@ const Registration = () => {
         const password = data.password;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        toast('Update User Success')
     }
     return (
         <div className='flex justify-center items-center mt-10'>
@@ -52,6 +54,7 @@ const Registration = () => {
                         type="text"
                         placeholder="Enter Your Name"
                         className="input input-bordered w-full max-w-xs"
+                        autoComplete='off'
                         {...register("name", {
                             required: {
                                 value: true,
@@ -65,6 +68,7 @@ const Registration = () => {
                         type="email"
                         placeholder="Enter Your Email"
                         className="input input-bordered w-full max-w-xs"
+                        autoComplete='off'
                         {...register("email", {
                             required: {
                                 value: true,
@@ -78,6 +82,7 @@ const Registration = () => {
                         type="password"
                         placeholder="Enter Your Password"
                         className="input input-bordered w-full max-w-xs"
+                        autoComplete='off'
                         {...register("password", {
                             required: {
                                 value: true,

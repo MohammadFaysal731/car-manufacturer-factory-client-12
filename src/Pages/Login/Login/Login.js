@@ -10,6 +10,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
+
     const from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
@@ -17,6 +18,8 @@ const Login = () => {
         emailLoading,
         emailError,
     ] = useSignInWithEmailAndPassword(auth);
+
+
     let signInError;
     useEffect(() => {
         if (emailUser) {
@@ -45,6 +48,7 @@ const Login = () => {
                         type="email"
                         placeholder="Enter Your Email"
                         className="input input-bordered w-full max-w-xs"
+                        autoComplete='off'
                         {...register("email", {
                             required: {
                                 value: true,
@@ -58,6 +62,7 @@ const Login = () => {
                         type="password"
                         placeholder="Enter Your Password"
                         className="input input-bordered w-full max-w-xs"
+                        autoComplete='off'
                         {...register("password", {
                             required: {
                                 value: true,

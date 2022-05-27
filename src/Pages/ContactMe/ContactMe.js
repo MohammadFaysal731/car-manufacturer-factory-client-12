@@ -26,10 +26,10 @@ const ContactMe = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="grid grid-cols-1 gap-5 border-2 p-9">
                                 <h1 className='text-xl text-primary'>ADD YOUR INFORMATION</h1>
-                                <input {...register("name", { required: true })} type="text" placeholder="Your Name" className="input input-bordered input-accent w-full max-w-xs" />
-                                <input {...register("email", { required: true })} type="email" placeholder='Your Email' className="input input-bordered input-accent w-full max-w-xs " />
-                                <input  {...register("subject", { required: true })} type="text" placeholder="Your Subject" className="input input-bordered input-accent w-full max-w-xs" />
-                                <textarea type="text" {...register("description", { required: true })} className="textarea textarea-accent" placeholder="Description" />
+                                <input {...register("name", { required: true })} type="text" placeholder="Your Name" className="input input-bordered input-accent w-full max-w-xs" autoComplete='off' />
+                                <input {...register("email", { required: true })} type="email" placeholder='Your Email' className="input input-bordered input-accent w-full max-w-xs " autoComplete='off' />
+                                <input  {...register("subject", { required: true })} type="text" placeholder="Your Subject" className="input input-bordered input-accent w-full max-w-xs" autoComplete='off' />
+                                <textarea type="text" {...register("description", { required: true })} className="textarea textarea-accent" placeholder="Description" autoComplete='off' />
                                 <input type="submit" className='btn btn-outline btn-primary w-full max-w-xs' value="submit" />
                             </div>
                         </form>
