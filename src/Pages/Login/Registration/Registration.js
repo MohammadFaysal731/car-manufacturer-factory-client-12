@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
 import SocialLogin from '../../../ShearedPages/SocialLogin/SocialLogin';
+import useUser from '../../../hooks/useUser';
 
 const Registration = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -20,14 +21,16 @@ const Registration = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [users] = useUser(emailUser);
+
     let signInError;
 
 
     useEffect(() => {
-        if (emailUser) {
+        if (users) {
             navigate(from, { replace: true });
         }
-    }, [emailUser, navigate, location, from])
+    }, [users, navigate, location, from])
 
     if (emailLoading || updating) {
         return <Loading></Loading>

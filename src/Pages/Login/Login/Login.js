@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../../ShearedPages/Loading/Loading';
 import SocialLogin from '../../../ShearedPages/SocialLogin/SocialLogin';
+import useUser from '../../../hooks/useUser';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -19,13 +20,15 @@ const Login = () => {
         emailError,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [users] = useUser(emailUser);
 
     let signInError;
+
     useEffect(() => {
-        if (emailUser) {
+        if (users) {
             navigate(from, { replace: true });
         }
-    }, [emailUser, navigate, location, from])
+    }, [users, navigate, location, from])
     if (emailLoading) {
         return <Loading></Loading>
     }
