@@ -28,7 +28,7 @@ const MyOrders = () => {
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
-                        <tr>
+                        <tr className='text-primary'>
                             <th>Sl</th>
                             <th>Product</th>
                             <th>Product Quantity</th>
