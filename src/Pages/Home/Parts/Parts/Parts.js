@@ -8,7 +8,7 @@ const Parts = () => {
     useEffect(() => {
         fetch('http://localhost:5000/part')
             .then(res => res.json())
-            .then(data => setParts(data.slice(0, 6)))
+            .then(data => setParts(data))
     }, [])
 
 
@@ -18,7 +18,7 @@ const Parts = () => {
             <div className="flex justify-center items-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {
-                        parts.map(part => <Part
+                        parts?.map(part => <Part
                             part={part}
                             key={part._id}
                         ></Part>)
