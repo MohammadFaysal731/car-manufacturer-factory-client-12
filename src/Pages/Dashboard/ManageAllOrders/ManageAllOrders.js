@@ -24,8 +24,8 @@ const ManageAllOrders = () => {
     return (
         <div>
             <h1 className='text-center text-primary text-2xl m-5 uppercase'>Manage All Orders </h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full ">
+            <div className="overflow-x-auto">
+                <table className="table w-full ">
 
                     <thead>
                         <tr className='text-primary'>
@@ -53,7 +53,7 @@ const ManageAllOrders = () => {
                                 <td>{order.phone}</td>
                                 <td>{order.productName}</td>
                                 <td>{order.productQuantity}</td>
-                                <td><button onClick={() => handleDeliver(order._id)} class="btn btn-xs btn-outline btn-primary">Deliver</button></td>
+                                <td><button onClick={() => handleDeliver(order._id)} className="btn btn-xs btn-outline btn-primary">Deliver</button></td>
                             </tr>)
                         }
 

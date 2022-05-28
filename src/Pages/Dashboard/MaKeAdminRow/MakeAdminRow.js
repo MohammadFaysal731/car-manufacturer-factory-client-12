@@ -15,12 +15,13 @@ const MakeAdminRow = ({ user, index, refetch }) => {
                 }
             })
     }
+
     return (
         <tr className='hover  text-primary'>
             <th>{index + 1}</th>
             <td>{user.email}</td>
-            <td>{role !== 'admin' && <button onClick={handleMakeAdmin} class="btn btn-primary btn-outline  btn-xs">Make Admin</button>}</td>
-            <td><button class="btn btn-primary btn-outline  btn-xs">Remove</button></td>
+            <td>{role !== 'admin' && <button onClick={handleMakeAdmin} className="btn btn-primary btn-outline  btn-xs">Make Admin</button>}</td>
+
         </tr >
     );
 };

@@ -21,15 +21,15 @@ const Modal = ({ deleteConfirm, refetch, setDeleteConfirm }) => {
     return (
         <div className="">
             {/* <!-- Put this part before </body> tag-- > */}
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal modal-top sm:modal-middle p-5">
-                <div class="modal-box text-primary uppercase">
-                    <h3 class="font-bold text-lg">{productName}</h3>
-                    <p class="py-4 text-red-500" ><small>do you Want to delete This item ? Then click delete</small></p>
-                    <p class="py-4">once you delete this you can not get it </p>
-                    <div class="modal-action">
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal modal-top sm:modal-middle p-5">
+                <div className="modal-box text-primary uppercase">
+                    <h3 className="font-bold text-lg">{productName}</h3>
+                    <p className="py-4 text-red-500" ><small>do you Want to delete This item ? Then click delete</small></p>
+                    <p className="py-4">once you delete this you can not get it </p>
+                    <div className="modal-action">
                         <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-primary btn-outline">Delete</button>
-                        <label for="my-modal-6" class="btn btn-xs btn-primary btn-outline">Cancel</label>
+                        <label for="my-modal-6" className="btn btn-xs btn-primary btn-outline">Cancel</label>
                     </div>
                 </div>
             </div>

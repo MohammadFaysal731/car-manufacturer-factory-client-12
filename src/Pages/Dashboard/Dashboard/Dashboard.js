@@ -1,8 +1,19 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+
+import Loading from '../../../ShearedPages/Loading/Loading';
 
 
 const Dashboard = () => {
+    const [user, loading] = useAuthState(auth);
+
+    const navigate = useNavigate();
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
 
@@ -17,13 +28,18 @@ const Dashboard = () => {
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content uppercase">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
-                        <li><Link to='/dashboard/myorders'>My Orders</Link></li>
-                        <li><Link to='/dashboard/addreview'>Add Review</Link></li>
-                        <li><Link to='/dashboard/manageallorder'>Manage All Orders</Link></li>
-                        <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
-                        <li><Link to='/dashboard/makeadmin'>Make Admin</Link></li>
-                        <li><Link to='/dashboard/manageallproducts'>Manage All Products</Link></li>
+                        {user ?
+                            <>
+                                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                                <li><Link to='/dashboard/addreview'>Add Review</Link></li>
+                                <li><Link to='/dashboard/manageallorder'>Manage All Orders</Link></li>
+                                <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
+                                <li><Link to='/dashboard/makeadmin'>Make Admin</Link></li>
+                                <li><Link to='/dashboard/manageallproducts'>Manage All Products</Link></li>
+                            </>
 
+                            : navigate('/login')
+                        }
                     </ul>
 
                 </div>

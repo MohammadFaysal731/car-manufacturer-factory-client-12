@@ -1,8 +1,11 @@
-# Getting Started with Create React App
+# CAR PARTS MANUFACTURE FACTORY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+This project was bootstrapped with [Create React App]
+## This Application Some Futures 
+### &bull;Email & PassWord Login System 
+### &bull;Social Login System
+### &bull;Protected Route
+### &bull;Nested Rout
 
 In the project directory, you can run:
 

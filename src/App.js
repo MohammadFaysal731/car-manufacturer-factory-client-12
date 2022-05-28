@@ -42,7 +42,7 @@ function App() {
             <Route index element={<MyProfile></MyProfile>}></Route>
             <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
             <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
-            <Route path='payment' element={<Payment></Payment>}></Route>
+            <Route path='payment/:id' element={<Payment></Payment>}></Route>
             <Route path='addreview' element={<AddReview></AddReview>}></Route>
             <Route path='manageallorder' element={<ManageAllOrders></ManageAllOrders>}></Route>
             <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>

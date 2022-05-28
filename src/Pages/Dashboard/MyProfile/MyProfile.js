@@ -10,18 +10,32 @@ const MyProfile = () => {
 
 
     const onSubmit = async (data) => {
-
+        const name = data.name;
+        const email = data.email;
         const education = data.education;
         const location = data.location;
         const phone = data.phone;
-        const LinkedIn = data.LinkedIn;
+        const linkedIn = data.linkedIn;
         const userInformation = {
+            name: name,
+            email: email,
             education: education,
             location: location,
             phone: phone,
-            LinkedIn: LinkedIn
+            linkedIn: linkedIn
         }
-        console.log(userInformation);
+        fetch(`http://localhost:5000/profile`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInformation)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+
         reset();
 
     }
@@ -32,20 +46,38 @@ const MyProfile = () => {
         <div className=''>
             <h1 className='text-center text-primary text-2xl m-5 uppercase'>My Profile</h1>
             <div className=" p-5 mb-5">
-                <div class="card w-96 bg-base-100 shadow-xl p-5">
+                <div className="card w-96 bg-base-100 shadow-xl p-5">
                     <div className="flex justify-between">
                         <div className="p-5 text-primary">
                             <h4>{user?.displayName}</h4>
                             <p><small>{user?.email}</small></p>
                         </div>
-                        <div class="avatar p-5 ">
-                            <div class="w-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <div className="avatar p-5 ">
+                            <div className="w-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                 <img src={user?.photoURL ? user?.photoURL : useImg} alt={user?.displayName} />
                             </div>
                         </div>
                     </div>
                     <div className="">
                         <form onSubmit={handleSubmit(onSubmit)}>
+                            <input
+                                type="text"
+                                value={user?.displayName}
+                                className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
+                                {...register("name")} />
+                            <label className="label">
+
+                            </label>
+                            <input
+                                type="email"
+                                value={user?.email}
+                                className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
+                                {...register("email")} />
+                            <label className="label">
+
+                            </label>
                             <input
                                 type="text"
                                 placeholder="Enter Your Education"
@@ -94,14 +126,14 @@ const MyProfile = () => {
                                 placeholder="Enter Your LinkedIn Profile Link"
                                 className="input input-bordered w-full max-w-xs"
                                 autoComplete='off'
-                                {...register("LinkedIn", {
+                                {...register("linkedIn", {
                                     required: {
                                         value: true,
                                         message: 'LinkedIn is Required'
                                     }
                                 })} />
                             <label className="label">
-                                {errors.LinkedIn?.type === 'required' && <span className='text-red-500'><small>{errors.LinkedIn.message}</small></span>}
+                                {errors.linkedIn?.type === 'required' && <span className='text-red-500'><small>{errors.linkedIn.message}</small></span>}
 
                             </label>
                             <button className="btn btn-outline btn-primary w-full max-w-xs">Submit</button>

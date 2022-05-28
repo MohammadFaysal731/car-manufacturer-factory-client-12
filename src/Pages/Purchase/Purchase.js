@@ -29,6 +29,7 @@ const Purchase = () => {
         const address = data.address;
         const phone = data.phone;
         const productName = data.productName;
+        const price = data.price;
         const productQuantity = data.productQuantity;
 
         const orders = {
@@ -37,7 +38,8 @@ const Purchase = () => {
             address: address,
             phone: phone,
             productName: productName,
-            productQuantity: productQuantity
+            price: price,
+            productQuantity: productQuantity,
         }
         console.log(orders)
         fetch(`http://localhost:5000/order`, {
@@ -144,6 +146,20 @@ const Purchase = () => {
                                 })} />
                             <label className="label">
                                 {errors.productName?.type === 'required' && <span className='text-red-500'><small>{errors.productName.message}</small></span>}
+                            </label>
+                            <input
+                                type="number"
+                                placeholder="Enter Product Price"
+                                className="input input-bordered w-full max-w-xs"
+                                autoComplete='off'
+                                {...register("price", {
+                                    required: {
+                                        value: true,
+                                        message: 'Product Price is Required'
+                                    }
+                                })} />
+                            <label className="label">
+                                {errors.price?.type === 'required' && <span className='text-red-500'><small>{errors.price.message}</small></span>}
                             </label>
                             <input
 
