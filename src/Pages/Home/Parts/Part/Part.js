@@ -3,6 +3,7 @@ import { FaOpencart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 const Part = ({ part }) => {
     const { _id, image, name, description, minimumQuantity, availableQuantity, price } = part;
+
     const navigate = useNavigate();
 
     const handleBuyNow = id => {
@@ -12,7 +13,7 @@ const Part = ({ part }) => {
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={image} alt="Shoes" className="rounded-xl" />
+                <img src={image} alt={name} className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>

@@ -11,7 +11,7 @@ const Purchase = () => {
     const [purchase, setPurchase] = useState([]);
     const [user] = useAuthState(auth);
 
-    const { images, name, description, minimumQuantity, availableQuantity, price } = purchase;
+    const { image, name, description, minimumQuantity, availableQuantity, price } = purchase;
 
     useEffect(() => {
         fetch(`https://arcane-wave-36382.herokuapp.com/part/${id}`)
@@ -41,7 +41,7 @@ const Purchase = () => {
             price: price,
             productQuantity: productQuantity,
         }
-        console.log(orders)
+
         fetch(`https://arcane-wave-36382.herokuapp.com/order`, {
             method: 'POST',
             headers: {
@@ -51,7 +51,6 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 if (result.insertedId) {
                     toast.success('Your Order Will Be Done Success Fully')
                     reset();
@@ -65,7 +64,7 @@ const Purchase = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div className="card w-96 bg-base-100 shadow-2xl">
                         <figure className="px-10 pt-10">
-                            <img src={images} alt="Shoes" className="rounded-xl" />
+                            <img src={image} alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{name}</h2>
