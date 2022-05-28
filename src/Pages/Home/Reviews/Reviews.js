@@ -5,7 +5,7 @@ import { GiCursedStar } from 'react-icons/gi';
 
 
 const Reviews = () => {
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/review', {
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://arcane-wave-36382.herokuapp.com/review', {
         method: 'GET'
     }).then(res => res.json()))
     if (isLoading) {

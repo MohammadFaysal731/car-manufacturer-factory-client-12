@@ -24,7 +24,7 @@ const MyProfile = () => {
             phone: phone,
             linkedIn: linkedIn
         }
-        fetch(`http://localhost:5000/profile`, {
+        fetch(`https://arcane-wave-36382.herokuapp.com/profile`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

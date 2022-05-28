@@ -3,14 +3,14 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import Loading from '../../../ShearedPages/Loading/Loading';
 const ManageAllOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/orders').then(res => res.json()));
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://arcane-wave-36382.herokuapp.com/orders').then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
     }
 
     const handleDeliver = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://arcane-wave-36382.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

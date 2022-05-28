@@ -5,7 +5,7 @@ const Modal = ({ deleteConfirm, refetch, setDeleteConfirm }) => {
     const { _id, productName } = deleteConfirm;
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://arcane-wave-36382.herokuapp.com/order/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

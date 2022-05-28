@@ -14,7 +14,7 @@ const Purchase = () => {
     const { images, name, description, minimumQuantity, availableQuantity, price } = purchase;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/part/${id}`)
+        fetch(`https://arcane-wave-36382.herokuapp.com/part/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPurchase(data)
@@ -42,7 +42,7 @@ const Purchase = () => {
             productQuantity: productQuantity,
         }
         console.log(orders)
-        fetch(`http://localhost:5000/order`, {
+        fetch(`https://arcane-wave-36382.herokuapp.com/order`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

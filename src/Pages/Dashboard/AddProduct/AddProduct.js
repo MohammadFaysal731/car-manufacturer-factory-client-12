@@ -33,7 +33,7 @@ const AddProduct = () => {
                     }
                     // send to bakend
 
-                    fetch('http://localhost:5000/part', {
+                    fetch('https://arcane-wave-36382.herokuapp.com/part', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

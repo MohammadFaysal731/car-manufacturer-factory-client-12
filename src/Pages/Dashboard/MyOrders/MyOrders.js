@@ -14,7 +14,7 @@ const MyOrders = () => {
 
     const [deleteConfirm, setDeleteConfirm] = useState(null);
 
-    const { data: orders, isLoading, refetch } = useQuery(['orders', user?.email], () => fetch(`http://localhost:5000/order?email=${user?.email}`, {}).then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery(['orders', user?.email], () => fetch(`https://arcane-wave-36382.herokuapp.com/order?email=${user?.email}`, {}).then(res => res.json()))
 
     if (userLoading || isLoading) {
         return <Loading></Loading>

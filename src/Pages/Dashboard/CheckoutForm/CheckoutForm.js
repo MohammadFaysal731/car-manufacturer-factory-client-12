@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/create-payment-intent`, {
+        fetch(`https://arcane-wave-36382.herokuapp.com/create-payment-intent`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
